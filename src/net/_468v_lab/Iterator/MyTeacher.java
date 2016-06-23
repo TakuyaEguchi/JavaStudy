@@ -7,23 +7,23 @@ package net._468v_lab.Iterator;
  */
 public class MyTeacher extends Teacher {
 
-	private StudentList studentList;
+	private MyStudentList myStudentList;
 	
 	@Override
 	public void createStudentList() {
 		// TODO Auto-generated method stub
-		studentList = new StudentList(3);
-		studentList.add(new Student("Taro",Const.BOY));
-		studentList.add(new Student("Jiro",Const.BOY));
-		studentList.add(new Student("Hanako",Const.GIRL));
+		myStudentList = new MyStudentList(3);
+		myStudentList.add(new Student("Taro",Const.BOY));
+		myStudentList.add(new Student("Jiro",Const.BOY));
+		myStudentList.add(new Student("Hanako",Const.GIRL));
 	}
 
 	@Override
 	public void callStudents() {
 		// TODO Auto-generated method stub
-		int size = studentList.getLastNum();
-		for(int i = 0; i < size; i++){
-			System.out.println(studentList.getStudentAt(i).getName());
+		Iterator itr = myStudentList.iterator();
+		while(itr.hasNext()){
+			System.out.println(((Student)itr.next()).getName());
 		}
 
 	}
