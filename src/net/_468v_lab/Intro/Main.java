@@ -19,7 +19,12 @@ public class Main {
 		sword.name = "炎の剣";
 		sword.damage = 10;
 		
-		// 勇者を作成
+		// 大剣を作成
+		Sword bigSword = new Sword();
+		bigSword.name = "大剣";
+		bigSword.damage = 15;
+		
+		// 勇者ミナトを作成
 		Hero minato = new Hero();
 		minato.name = "ミナト";
 		minato.hp = 100;
@@ -27,6 +32,19 @@ public class Main {
 
 		System.out.println("勇者" + minato.name + "が誕生した");
 		System.out.println("現在の武器は" + minato.sword.name);
+		
+		// 勇者アサカを作成
+		Hero asaka = new Hero();
+		asaka.name = "アサカ";
+		asaka.hp = 150;
+		asaka.sword = bigSword;
+		
+		// 魔法使いスガワラを作成
+		Wizard sugawara = new Wizard();
+		sugawara.hp = 50;
+		sugawara.heal(minato);
+		sugawara.heal(asaka);
+		
 		
 		// お化けキノコを作成
 		Matango m1 = new Matango();
