@@ -47,6 +47,12 @@ public class Main {
 		sugawara.heal(minato);
 		sugawara.heal(asaka);
 		
+		// 聖職者ラキを作成
+		Cleric Raki = new Cleric("ラキ");
+		System.out.println("聖職者" + Raki.name +"が誕生した");
+		System.out.println("HP" + Raki.hp);
+		System.out.println("MP" + Raki.mp);		
+		
 		
 		// お化けキノコを作成
 		Matango m1 = new Matango();

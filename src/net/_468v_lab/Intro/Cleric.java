@@ -14,12 +14,27 @@ public class Cleric {
 	String name;
 	
 	/**最大HP*/
-	final int MAXHP = 50;
+	static final int MAXHP = 50;
 	/**最大MP*/
-	final int MAXMP = 10;
+	static final int MAXMP = 10;
 	
 	int hp = 10;
 	int mp = 10;
+	
+	
+	Cleric(String name, int hp, int mp){
+		this.name = name;
+		this.hp = hp;
+		this.mp = mp;
+	}
+	
+	Cleric(String name, int hp){
+		this(name, hp, Cleric.MAXMP);
+	}
+	
+	Cleric(String name){
+		this(name, Cleric.MAXHP, Cleric.MAXMP);
+	}
 	
 	/**
 	 * セルフエイド
