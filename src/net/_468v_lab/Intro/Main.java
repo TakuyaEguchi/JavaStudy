@@ -14,12 +14,19 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// 剣を作成
+		Sword sword = new Sword();
+		sword.name = "炎の剣";
+		sword.damage = 10;
 		
 		// 勇者を作成
 		Hero minato = new Hero();
 		minato.name = "ミナト";
 		minato.hp = 100;
+		minato.sword = sword;
+
 		System.out.println("勇者" + minato.name + "が誕生した");
+		System.out.println("現在の武器は" + minato.sword.name);
 		
 		// お化けキノコを作成
 		Matango m1 = new Matango();

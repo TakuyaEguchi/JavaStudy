@@ -12,7 +12,21 @@ public class Hero {
 	
 	String name;	// 名前の宣言
 	int hp;			// HPの宣言
-	void atack(){}
+	Sword sword;	// 剣を装備
+	
+	/**
+	 * 攻撃
+	 * 敵に5ポイントのダメージを与える
+	 */
+	void atack(){
+		System.out.println(this.name + "は攻撃した！");
+		System.out.println("敵に5ポイントのダメージを与えた！");
+	}
+	
+	/**
+	 * 逃げる
+	 * 逃げて最終HPを表示する
+	 */
 	void run(){
 		System.out.println(this.name + "は、逃げ出した！");
 		System.out.println("GAME OVER");
