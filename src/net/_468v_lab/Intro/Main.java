@@ -25,18 +25,20 @@ public class Main {
 		bigSword.damage = 15;
 		
 		// 勇者ミナトを作成
-		Hero minato = new Hero();
-		minato.name = "ミナト";
-		minato.hp = 100;
+		Hero minato = new Hero("ミナト");
 		minato.sword = sword;
+		
+		Hero.setRandomMoney();
 
 		System.out.println("勇者" + minato.name + "が誕生した");
 		System.out.println("現在の武器は" + minato.sword.name);
+		System.out.println("ヒーロの所持金は" + Hero.money);
+		
+		System.out.println("ミナトの所持金でも表示はされる" + minato.money);
+		
 		
 		// 勇者アサカを作成
-		Hero asaka = new Hero();
-		asaka.name = "アサカ";
-		asaka.hp = 150;
+		Hero asaka = new Hero("アサカ");
 		asaka.sword = bigSword;
 		
 		// 魔法使いスガワラを作成

@@ -10,9 +10,20 @@ package net._468v_lab.Intro;
  */
 public class Hero {
 	
-	String name;	// 名前の宣言
-	int hp;			// HPの宣言
-	Sword sword;	// 剣を装備
+	String name;		// 名前の宣言
+	int hp;				// HPの宣言
+	Sword sword;		// 剣を装備
+	static int money;	// Heroで共有する.Staticはクラス1つに用意される
+	
+	Hero(String name){
+		this.hp = 100;
+		this.name = name;
+	}
+	
+	Hero(){
+		this.hp = 100;
+		this.name = "Dammy";
+	}
 	
 	/**
 	 * 攻撃
@@ -60,6 +71,14 @@ public class Hero {
 	void sleep(){
 		this.hp = 100;
 		System.out.println(this.name + "は、眠って回復した！");
+	}
+	
+	/**
+	 * 勇者所持金設定
+	 * 
+	 */
+	static void setRandomMoney(){
+		Hero.money = (int)(Math.random() * 1000);
 	}
 
 }
