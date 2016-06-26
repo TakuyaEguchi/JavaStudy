@@ -26,12 +26,12 @@ public class Main {
 		
 		// 勇者ミナトを作成
 		Hero minato = new Hero("ミナト");
-		minato.sword = sword;
+		minato.setSword(sword);
 		
 		Hero.setRandomMoney();
 
-		System.out.println("勇者" + minato.name + "が誕生した");
-		System.out.println("現在の武器は" + minato.sword.name);
+		System.out.println("勇者" + minato.getName() + "が誕生した");
+		System.out.println("現在の武器は" + minato.getSword().name);
 		System.out.println("ヒーロの所持金は" + Hero.money);
 		
 		System.out.println("ミナトの所持金でも表示はされる" + minato.money);
@@ -39,11 +39,12 @@ public class Main {
 		
 		// 勇者アサカを作成
 		Hero asaka = new Hero("アサカ");
-		asaka.sword = bigSword;
+		asaka.setSword(bigSword);
 		
 		// 魔法使いスガワラを作成
 		Wizard sugawara = new Wizard();
-		sugawara.hp = 50;
+		sugawara.setHp(50);
+		sugawara.setWand(new Wand("杖"));
 		sugawara.heal(minato);
 		sugawara.heal(asaka);
 		

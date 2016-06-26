@@ -10,10 +10,54 @@ package net._468v_lab.Intro;
  */
 public class Hero {
 	
-	String name;		// 名前の宣言
-	int hp;				// HPの宣言
-	Sword sword;		// 剣を装備
+	private String name;		// 名前の宣言
+	private int hp;				// HPの宣言
+	private Sword sword;		// 剣を装備
 	static int money;	// Heroで共有する.Staticはクラス1つに用意される
+	
+	public String getName(){
+		return this.name;
+	}
+	
+	public void setName(String name){
+		if(name == null){
+			throw new IllegalArgumentException("名前がnullである。処理を中断");
+		}
+		if(name.length() <= 1){
+			throw new IllegalArgumentException("名前が短すぎる。処理を中断");
+		}
+		if(name.length() >= 8){
+			throw new IllegalArgumentException("名前が長過ぎる。処理を中断");
+		}
+		this.name = name;
+	}
+	
+	public int getHp(){
+		return this.hp;
+	}
+	
+	public void setHp(int hp){
+		this.hp = hp;
+	}
+	
+	public Sword getSword(){
+		return this.sword;
+	}
+	
+	public void setSword(Sword sword){
+		this.sword = sword;
+	}
+	
+	public int getMoney(){
+		return Hero.money;
+	}
+	
+	public void setMoney(int money){
+		Hero.money = money;
+	}
+	
+	
+	
 	
 	Hero(String name){
 		this.hp = 100;
@@ -23,6 +67,15 @@ public class Hero {
 	Hero(){
 		this.hp = 100;
 		this.name = "Dammy";
+	}
+	
+	/**
+	 * 死亡
+	 * GAME OVERを表示
+	 */
+	private void die(){
+		System.out.println(this.name + "は死んでしまった！");
+		System.out.println("GAME OVER");
 	}
 	
 	/**
@@ -54,6 +107,11 @@ public class Hero {
 		System.out.println(this.name + "は、" + sec + "秒座った");
 		System.out.println("HPが" + sec + "ポイント回復した");
 	}
+	
+	public void attack(Matango m){
+		
+	}
+	
 	/**
 	 * 転ぶ
 	 * HPを-5する
@@ -62,6 +120,11 @@ public class Hero {
 		this.hp -= 5;
 		System.out.println(this.name + "は転んだ！");
 		System.out.println("5のダメージ！");
+		
+		if(this.hp <= 0){
+			this.die();
+		}
+		
 	}
 	
 	/**
