@@ -4,6 +4,7 @@
 package net._468v_lab.Intro;
 
 /**
+ * ヒーロクラス
  * @author TakuyaEguchi
  *
  */
