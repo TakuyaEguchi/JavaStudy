@@ -28,6 +28,10 @@ public class Main {
 		Hero minato = new Hero("ミナト");
 		minato.setSword(sword);
 		
+		// スーパーヒーロを作成
+		SuperHero superHero = new SuperHero();
+		superHero.run();
+		
 		Hero.setRandomMoney();
 
 		System.out.println("勇者" + minato.getName() + "が誕生した");
@@ -55,22 +59,12 @@ public class Main {
 		System.out.println("MP" + Raki.mp);		
 		
 		
-		// お化けキノコを作成
-		Matango m1 = new Matango();
-		m1.hp = 50;
-		m1.suffix = 'A';
-		
-		Matango m2 = new Matango();
-		m2.hp = 48;
-		m2.suffix = 'B';
 		
 		
 		// 冒険の始まり
 		minato.sit(5);
 		minato.slip();
 		minato.sit(25);
-		m1.run();
-		m2.run();
 		minato.run();
 
 	}

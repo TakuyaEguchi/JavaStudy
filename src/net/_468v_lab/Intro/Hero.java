@@ -91,7 +91,7 @@ public class Hero {
 	 * 逃げる
 	 * 逃げて最終HPを表示する
 	 */
-	void run(){
+	public void run(){
 		System.out.println(this.name + "は、逃げ出した！");
 		System.out.println("GAME OVER");
 		System.out.println("最終HPは" + this.hp + "でした");
@@ -116,7 +116,7 @@ public class Hero {
 	 * 転ぶ
 	 * HPを-5する
 	 */
-	void slip(){
+	public final void slip(){
 		this.hp -= 5;
 		System.out.println(this.name + "は転んだ！");
 		System.out.println("5のダメージ！");
